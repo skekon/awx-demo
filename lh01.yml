@@ -1,0 +1,11 @@
+---
+- name: test execution environment
+  hosts: all
+  tasks:
+    - name: fetch ls of /runner
+      command: ls -l /runner
+      register: cmd01
+      
+    - name: print content of cmd01
+      debug:
+        var: cmd01
